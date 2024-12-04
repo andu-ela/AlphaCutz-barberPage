@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Navbar from './pages/Navbar';
+import Navbar from './pages/NavBar';
 import Hero from './pages/HeroSection';
 import BarberPage from './pages/BarberPage';
 import FeaturedServices from './pages/FeaturedServies';
