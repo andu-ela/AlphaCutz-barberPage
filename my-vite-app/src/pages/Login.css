@@ -1,0 +1,144 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    overflow: hidden; 
+    position: relative; 
+}
+
+.login-card {
+    background-color: rgba(3, 3, 3, 0.884);
+    border-radius: 28px; 
+    box-shadow: 0 1px 10px 10px rgba(2, 65, 48, 0.6);
+    padding: 20px; 
+    width: 500px; 
+    height: auto; 
+    text-align: center; 
+    position: relative; 
+    z-index: 1; 
+}
+
+h2 {
+    margin-top: 40px; 
+    color: aliceblue;
+}
+
+.input-group {
+    margin-bottom: 40px; 
+    margin-top: 40px;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%; 
+    padding: 10px; 
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+    background-color: #f9f9f9; 
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #0ba31c; 
+    outline: none; 
+}
+
+.remember-me {
+    display: flex; 
+    margin-top: 10px;
+    color: aliceblue;
+    align-items: center; 
+    margin-bottom: 75px; 
+}
+
+.login-button {
+    background-color: #119261; 
+    color: white; 
+    border: none; 
+    padding: 15px 20px; 
+    border-radius: 15px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+    width: 60%; 
+}
+
+.login-button:hover {
+    background-color: #27952f; 
+}
+
+.forgot-password {
+    display: block; 
+    color: #4CAF50; 
+    margin-top: 20px; 
+}
+
+.avatar {
+    background-color: #045b041e; 
+    border-radius: 50%; 
+    width: 70px; 
+    height: 70px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px; 
+    margin-top: 30px;
+}
+
+.avatar i {
+    color: #119261 !important; 
+    font-size: 40px; 
+}
+
+.input-icon {
+    position: relative; 
+}
+
+.input-icon i {
+    position: absolute; 
+    left: 10px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    color: #119261; 
+}
+
+input[type="email"],
+input[type="password"] {
+    padding-left: 40px; 
+}
+
+@media (max-width: 768px) { 
+    .lottie-background {
+        width: 200vw; 
+        height: 100vh; 
+        transform: translate(-50%); 
+        overflow: hidden; 
+        filter: blur(2px); 
+    }
+
+    .login-card {
+        margin-top: 50px; 
+        margin-bottom: 50px; 
+        padding: 30px; 
+        width: 60%; 
+        height: auto; 
+    }
+
+    .avatar {
+        width: 60px; 
+        height: 60px;
+    }
+
+    .avatar i {
+        font-size: 30px; 
+    }
+
+    .login-button {
+        width: 60%; 
+    }
+
+    .input-group {
+        margin-bottom: 30px; 
+        margin-top: 20px; 
+    }
+}
