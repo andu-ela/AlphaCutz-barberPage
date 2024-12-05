@@ -2,8 +2,7 @@ import { useUser } from "../UserContext";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./NavBar.css";
-import React from 'react'; 
-
+import React from "react";
 
 const Navbar = ({
   scrollToBookAppointment,

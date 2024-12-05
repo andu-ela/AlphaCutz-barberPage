@@ -16,9 +16,10 @@
   padding: 40px;
   box-shadow: inset 7px 5px 5px rgba(250, 243, 243, 0.434),
     inset -5px -5px 15px rgba(138, 133, 133, 0.509),
-    5px 5px 15px rgba(236, 227, 227, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+    5px 5px 15px rgba(236, 227, 227, 0.3),
+    -5px -5px 15px rgba(255, 255, 255, 0.1);
   margin: 20px;
-  border-radius: 63% 47% 49% 51% / 59% 38% 62% 41%  ;
+  border-radius: 63% 47% 49% 51% / 59% 38% 62% 41%;
   box-shadow: 0 20px 20px rgba(254, 252, 252, 0.1);
 }
 
@@ -39,7 +40,6 @@
 }
 
 .form-group label {
-  
   display: block;
   margin-bottom: 5px;
   color: #ede6e6b7;
@@ -47,8 +47,8 @@
 
 .booked-time {
   position: relative;
-  text-decoration: line-through; 
-  color: red; 
+  text-decoration: line-through;
+  color: red;
 }
 
 .time-button {
@@ -58,19 +58,18 @@
 .time-button:after {
   content: "";
   position: absolute;
-  top: 50%; 
+  top: 50%;
   left: 0;
   right: 0;
-  height: 2px; 
-  background-color: red; 
+  height: 2px;
+  background-color: red;
   transform: translateY(-50%);
-  display: none; 
+  display: none;
 }
 
 .time-button.booked:after {
-  display: block; 
+  display: block;
 }
-
 
 .form-group input,
 .form-group select {
@@ -82,7 +81,7 @@
 
 .submit-button-container {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
 }
 
 .submit-button-container button {
@@ -119,13 +118,12 @@
   transition: background-color 0.3s;
 }
 
-
 .time-button.reserved {
   color: rgb(239, 16, 16);
 }
 
 .time-button.reserved .reserved-text {
-  display: inline; 
+  display: inline;
 }
 
 .time-button:hover {
@@ -168,7 +166,7 @@
 }
 
 .active-service {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
 }
 
@@ -197,26 +195,24 @@
   position: relative;
 }
 
-
 .booking-details {
-  text-align: left; 
+  text-align: left;
   margin-bottom: 10px;
 }
 .booking-details p strong {
-  display: inline-block; 
-  width: 150px; 
+  display: inline-block;
+  width: 150px;
 }
 
 .booking-details p {
-  display: flex; 
+  display: flex;
   margin-top: 40px;
   justify-content: space-between;
   text-align: start;
   margin-bottom: 10px;
 }
 
-
-.modal-content button{
+.modal-content button {
   margin-top: 40px;
 }
 .close {
@@ -230,19 +226,87 @@
 @media (max-width: 600px) {
   .form-group input,
   .form-group select {
-    width: 100%; 
+    width: 100%;
     padding: 8px;
-    font-size: 0.9rem; 
+    font-size: 0.9rem;
   }
 
   .submit-button-container button {
-    padding: 10px; 
-    font-size: 0.9rem; 
+    padding: 10px;
+    font-size: 0.9rem;
   }
 
   .time-button,
   .service-label {
-    flex: 1 1 45%; 
-    padding: 7px; 
+    flex: 1 1 45%;
+    padding: 7px;
+  }
+}
+@media (max-width: 600px) {
+  .book-appointment {
+    padding: 20px; /* Zvogëlo padding për pajisjet më të vogla */
+  }
+
+  .book-appointment-container {
+    padding: 20px;
+    border-radius: 50% 50% 40% 40% / 50% 35% 65% 35%; /* Pak më kompakte */
+  }
+
+  .book-appointment h2 {
+    font-size: 1.5rem; /* Zvogëlo madhësinë e titullit */
+  }
+
+  .form-group label {
+    font-size: 0.9rem; /* Madhësi më e vogël për etiketat */
+  }
+
+  .form-group input,
+  .form-group select {
+    font-size: 0.9rem;
+  }
+
+  .submit-button-container button {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .time-buttons {
+    flex-wrap: wrap;
+  }
+
+  .time-button {
+    flex: 1 1 48%; /* Koha dhe shërbimet të përshtaten më mirë në ekran të vogël */
+    padding: 7px;
+  }
+
+  .selected-time,
+  .selected-service {
+    font-size: 0.9rem;
+  }
+
+  .service-options {
+    flex-wrap: wrap;
+    gap: 10px; /* Hapësirë mes opsioneve */
+  }
+
+  .service-label {
+    flex: 1 1 45%;
+    padding: 7px;
+    font-size: 0.9rem;
+  }
+
+  .modal-content {
+    padding: 15px;
+    border-radius: 20px; /* Radius më kompakt për modal-in */
+  }
+
+  .booking-details p {
+    flex-direction: column; /* Organizim vertikal për përmbajtjen */
+    text-align: center;
+  }
+
+  .modal-content button {
+    font-size: 0.9rem;
+    padding: 10px;
   }
 }
