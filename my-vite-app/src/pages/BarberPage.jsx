@@ -6,7 +6,6 @@ const BarberPage = () => {
     const barberSectionRef = useRef(null);
 
     useEffect(() => {
-        // Funksioni i scroll-it që aktivizohet kur përdoruesi scrolldon
         const handleScroll = () => {
             if (barberSectionRef.current) {
                 const rect = barberSectionRef.current.getBoundingClientRect();
@@ -14,12 +13,9 @@ const BarberPage = () => {
             }
         };
 
-        // Shto event listener për scroll
         window.addEventListener("scroll", handleScroll);
-
-        // Pastrimi i event listener-it kur komponenti largohet
         return () => window.removeEventListener("scroll", handleScroll);
-    }, []); // Bëje këtë vetëm një herë kur komponenti të ngarkohet
+    }, []);
 
     return (
         <div ref={barberSectionRef} className={`barber-container ${hoverEffect ? "hovered" : ""}`}>

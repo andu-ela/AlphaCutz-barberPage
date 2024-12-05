@@ -19,8 +19,13 @@ function App() {
   const aboutRef = useRef(null);
   const footerRef = useRef(null);
 
+  // Initialize AOS
   useEffect(() => {
-    AOS.init({ duration: 1000 });
+    AOS.init({
+      duration: 1200, 
+      once: false,  
+      offset: 120,
+    });
   }, []);
 
   const scrollToBookAppointment = () => {
@@ -62,17 +67,17 @@ function App() {
               path="/"
               element={
                 <>
-                  <Hero />
-                  <div ref={aboutRef} data-aos="fade-up">
-                    <BarberPage scrollToAbout={scrollToAbout} />
+                  <Hero data-aos="fade-up" />
+                  <div ref={aboutRef} data-aos="fade-right">
+                    <BarberPage />
                   </div>
-                  <div ref={servicesRef} data-aos="fade-right">
-                    <FeaturedServices scrollToBookAppointment={scrollToBookAppointment} />
+                  <div ref={servicesRef} data-aos="fade-left">
+                    <FeaturedServices />
                   </div>
                   <div ref={bookAppointmentRef} className="book-appointment-container" data-aos="zoom-in">
                     <BookAppointment />
                   </div>
-                  <div ref={footerRef} className="footer" data-aos="fade-up">
+                  <div ref={footerRef} className="footer" data-aos="slide-up">
                     <Footer />
                   </div>
                 </>
