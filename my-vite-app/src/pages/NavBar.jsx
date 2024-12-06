@@ -1,15 +1,11 @@
 import { useUser } from "../UserContext";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { Link } from "react-scroll";
 import "./NavBar.css";
 import React from "react";
 
-const Navbar = ({
-  scrollToBookAppointment,
-  scrollToServices,
-  scrollToAbout,
-  scrollToFooter,
-}) => {
+const Navbar = () => {
   const { user, logout } = useUser();
   const [isOpen, setIsOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
@@ -58,40 +54,37 @@ const Navbar = ({
                 <a href="/">Home</a>
               </li>
               <li>
-                <a
-                  href="#book-appointment"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToBookAppointment();
-                    setIsOpen(false);
-                  }}
+                <Link
+                  to="bookAppointment"
+                  smooth={true}
+                  duration={800}
+                  offset={-50}
+                  onClick={() => setIsOpen(false)}
                 >
                   Book Appointment
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#services"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToServices();
-                    setIsOpen(false);
-                  }}
+                <Link
+                  to="services"
+                  smooth={true}
+                  duration={800}
+                  offset={-50}
+                  onClick={() => setIsOpen(false)}
                 >
                   Services
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#about-us"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToAbout();
-                    setIsOpen(false);
-                  }}
+                <Link
+                  to="about"
+                  smooth={true}
+                  duration={800}
+                  offset={-50}
+                  onClick={() => setIsOpen(false)}
                 >
                   About Us
-                </a>
+                </Link>
               </li>
               {user && (
                 <li>
@@ -99,16 +92,15 @@ const Navbar = ({
                 </li>
               )}
               <li>
-                <a
-                  href="#footer"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToFooter();
-                    setIsOpen(false);
-                  }}
+                <Link
+                  to="footer"
+                  smooth={true}
+                  duration={800}
+                  offset={-50}
+                  onClick={() => setIsOpen(false)}
                 >
                   Contact
-                </a>
+                </Link>
               </li>
 
               {user ? (

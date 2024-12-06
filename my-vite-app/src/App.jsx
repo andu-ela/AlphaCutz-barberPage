@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './pages/NavBar';
@@ -11,75 +11,42 @@ import AppointmentList from './pages/AppointmentList';
 import Login from './pages/Login';
 import { UserProvider } from './UserContext';
 import AOS from 'aos';
+import { Element } from 'react-scroll';
 import 'aos/dist/aos.css';
 
 function App() {
-  const bookAppointmentRef = useRef(null);
-  const servicesRef = useRef(null);
-  const aboutRef = useRef(null);
-  const footerRef = useRef(null);
-
   // Initialize AOS
   useEffect(() => {
     AOS.init({
-      duration: 1200, 
-      once: false,  
+      duration: 1200,
+      once: false,
       offset: 120,
     });
   }, []);
-
-  const scrollToBookAppointment = () => {
-    if (bookAppointmentRef.current) {
-      bookAppointmentRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const scrollToServices = () => {
-    if (servicesRef.current) {
-      servicesRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const scrollToAbout = () => {
-    if (aboutRef.current) {
-      aboutRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const scrollToFooter = () => {
-    if (footerRef.current) {
-      footerRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <UserProvider>
       <Router>
         <div>
-          <Navbar
-            scrollToBookAppointment={scrollToBookAppointment}
-            scrollToServices={scrollToServices}
-            scrollToAbout={scrollToAbout}
-            scrollToFooter={scrollToFooter}
-          />
+          <Navbar />
           <Routes>
             <Route
               path="/"
               element={
                 <>
                   <Hero data-aos="fade-up" />
-                  <div ref={aboutRef} data-aos="fade-right">
+                  <Element name="about" data-aos="fade-right">
                     <BarberPage />
-                  </div>
-                  <div ref={servicesRef} data-aos="fade-left">
+                  </Element>
+                  <Element name="services" data-aos="fade-left">
                     <FeaturedServices />
-                  </div>
-                  <div ref={bookAppointmentRef} className="book-appointment-container" data-aos="zoom-in">
+                  </Element>
+                  <Element name="bookAppointment" className="book-appointment-container" data-aos="zoom-in">
                     <BookAppointment />
-                  </div>
-                  <div ref={footerRef} className="footer" data-aos="slide-up">
+                  </Element>
+                  <Element name="footer" className="footer" data-aos="slide-up">
                     <Footer />
-                  </div>
+                  </Element>
                 </>
               }
             />
